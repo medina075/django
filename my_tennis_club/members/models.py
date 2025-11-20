@@ -8,3 +8,5 @@ class Member(models.Model):
   genero = models.CharField(max_length=200,null=True)
   email = models.EmailField(null=True)
 # Create your models here.
+  def __str__(self):
+    return f"{self.firstname} {self.lastname}"

@@ -1,0 +1,68 @@
+{% extends "master.html" %}
+
+{% block title %}
+  Detalles de {{ mymember.firstname }} {{ mymember.lastname }}
+{% endblock %}
+
+
+{% block content %}
+  <section class="member-details-section">
+    
+    
+
+    <div class="profile-card">
+      <div class="card-header">
+        <h1>👤 {{ mymember.firstname }} {{ mymember.lastname }}</h1>
+        <p class="status">Miembro activo</p>
+      </div>
+
+      <div class="card-body">
+        
+        <h3>Información de Contacto y Afiliación</h3>
+        
+        <div class="detail-grid">
+          
+          
+          <div class="detail-item">
+            <span class="label">📞 Teléfono:</span>
+            <span class="value">{{ mymember.phone }}</span>
+          </div>
+          
+          <div class="detail-item">
+            <span class="label">📧 Email:</span>
+            <span class="value">{{ mymember.email }}</span>
+          </div>
+          
+          <div class="detail-item">
+            <span class="label">📍 Ciudad:</span>
+            <span class="value">{{ mymember.city }}</span>
+          </div>
+          
+         
+          <div class="detail-item">
+            <span class="label">📅 Afiliado desde:</span>
+            <span class="value">{{ mymember.joined_date|date:"F j, Y" }}</span>
+          </div>
+          
+          <div class="detail-item">
+            <span class="label">⚧️ Género:</span>
+            <span class="value">{{ mymember.genero }}</span>
+          </div>
+          
+          <div class="detail-item">
+            <span class="label">Socio desde (Fecha simplificada):</span>
+            <span class="value">{{ mymember.joined_date|date:"Y/m/d" }}</span>
+          </div>
+          
+        </div>
+
+      </div>
+    </div>
+    
+  <br>
+    <p style="margin-top: 20px;">
+        <a href="/members" class="btn">Volver a Miembros</a>
+    </p>
+
+  </section>
+{% endblock %}

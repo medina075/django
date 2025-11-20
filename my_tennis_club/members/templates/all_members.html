@@ -1,0 +1,32 @@
+{% extends "master.html" %}
+
+{% block title %}
+  My Tennis Club - Lista de todos los miembros
+{% endblock %}
+
+
+{% block content %}
+<section class="member-list-section">
+    
+    <p class="back-link"><a href="/">← Ir a Inicio</a></p>
+
+    <div class="list-container">
+        
+        <h1 class="list-header">Lista de Miembros Activos</h1>
+        
+        <p class="count-info">Actualmente hay {{ mymembers|length }} miembros registrados en el club.</p>
+
+        <ul class="member-list">
+          {% for x in mymembers %}
+            <li>
+              <a href="details/{{ x.id }}" class="member-item">
+                <span class="member-name">{{ x.firstname }} {{ x.lastname }}</span>
+                <span class="member-details-link">Ver Perfil →</span>
+              </a>
+            </li>
+          {% endfor %}
+        </ul>
+        
+    </div>
+</section>
+{% endblock %}

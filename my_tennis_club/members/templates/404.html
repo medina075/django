@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh; /* Asegura que ocupe toda la altura de la vista */
+        }
+
+        /* NAV - Reutilizado para consistencia visual */
+        nav {
+            background-color: #0a3d62;
+            color: white;
+            padding: 15px 30px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        nav a {
+            color: white;
+            margin: 0 15px;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        /* FOOTER - Reutilizado para consistencia visual */
+        footer {
+            background: #0a3d62;
+            color: white;
+            text-align: center;
+            padding: 25px;
+            margin-top: auto; /* Empuja el footer hacia abajo */
+        }
+
+        /* ESTILOS ESPECÍFICOS DEL 404 */
+        .error-container {
+            flex-grow: 1; /* Permite que el contenedor de error ocupe el espacio restante */
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            padding: 50px 20px;
+        }
+
+        .error-container h1 {
+            font-size: 100px;
+            color: #0a3d62;
+            margin: 0;
+        }
+
+        .error-container h2 {
+            font-size: 30px;
+            color: #333;
+            margin: 10px 0 20px;
+        }
+
+        .error-container p {
+            font-size: 18px;
+            color: #666;
+            margin-bottom: 30px;
+        }
+
+        .btn {
+            background-color: #0a3d62;
+            padding: 12px 25px;
+            border-radius: 5px;
+            color: white;
+            text-decoration: none;
+            font-size: 18px;
+            font-weight: bold;
+            transition: background-color 0.3s;
+        }
+
+        .btn:hover {
+            background-color: #0a3d62;
+        }
+    </style>
+
+    <title>Error 404 - Página no encontrada</title>
+</head>
+<body>
+
+<nav>
+    <div class="logo">🏆 Club de Tenis</div>
+    <div>
+        <a href="/">Inicio</a>
+    </div>
+</nav>
+
+<div class="error-container">
+    <h1>404</h1>
+    <h2>¡Ups! Algo malió sal.</h2>
+    <p>La página que estás buscando no existe o se ha movido.</p>
+    <a href="/" class="btn">Volver a la Página Principal</a>
+</div>
+
+<footer>
+    © 2025 Club de Tenis – Todos los derechos reservados
+</footer>
+
+</body>
+</html>
