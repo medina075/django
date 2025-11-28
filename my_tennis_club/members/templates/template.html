@@ -1,0 +1,138 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html>
+<head>
+    <link rel="stylesheet" href="{% static 'myglobal.css' %}">
+</head>
+
+<body>
+
+<nav>
+    <div>Mi sitio</div>
+    <div>
+        <a href="/">Inicio</a>
+    </div>
+</nav>
+
+<section class="hero">
+    <h1>Call variable from array</h1>
+    <p>Mostrando resultados desde Django Template</p>
+</section>
+
+<section class="member-list-section">
+    <div class="list-container">
+
+        <h2 class="list-header">Variables del template</h2>
+
+        <ul class="member-list">
+
+            {% for x in records_laura %}
+              <li class="member-item"><span class="member-name">{{ x }}</span></li>
+            {% endfor %}
+            <br>
+
+            {% for x in genero_and_name %}
+              <li class="member-item"><span class="member-name">{{ x }}</span></li>
+            {% endfor %}
+            <br>
+
+            {% for x in name_or_name %}
+              <li class="member-item"><span class="member-name">{{ x }}</span></li>
+            {% endfor %}
+            <br>
+
+            {% for x in start_lyrics %}
+              <li class="member-item"><span class="member-name">{{ x }}</span></li>
+            {% endfor %}
+            <br>
+
+            {% for x in end_lyrics %}
+              <li class="member-item"><span class="member-name">{{ x }}</span></li>
+            {% endfor %}
+            <br>
+
+            {% for x in contains_lyrics %}
+              <li class="member-item"><span class="member-name">{{ x }}</span></li>
+            {% endfor %}
+            <br>
+
+            {% for x in rangge_lyrics %}
+              <li class="member-item"><span class="member-name">{{ x }}</span></li>
+            {% endfor %}
+            <br>
+
+            {% for x in inn_names %}
+              <li class="member-item"><span class="member-name">{{ x }}</span></li>
+            {% endfor %}
+            <br>
+
+            {% for x in end_and_start %}
+              <li class="member-item"><span class="member-name">{{ x }}</span></li>
+            {% endfor %}
+            <br>
+
+            {% for x in order_by_asc %}
+              <li class="member-item"><span class="member-name">{{ x }}</span></li>
+            {% endfor %}
+            <br>
+
+            {% for x in order_by_desc %}
+              <li class="member-item"><span class="member-name">{{ x }}</span></li>
+            {% endfor %}
+            <br>
+
+            <img src="{% static 'members/bane.jpeg' %}" alt="Batman<Bane">
+            <br>
+
+            {% for x in fruits %}
+              <li class="member-item"><span class="member-name">{{ x }}</span></li>
+            {% endfor %}
+        </ul>
+
+        <br>
+
+        <h2 class="list-header">Variables internas</h2>
+
+        {% with firstname="SENA" %}
+            <p class="member-name">Welcome to the {{ firstname }}</p>
+        {% endwith %}
+
+        <h2 class="list-header">Model variables</h2>
+        <ul class="member-list">
+          {% for x in mymembers %}
+            <li class="member-item"><span class="member-name">{{ x.firstname }}</span></li>
+          {% endfor %}
+        </ul>
+
+        <h2 class="list-header">Texto filtrado</h2>
+
+        {% filter upper %}
+            {% lorem 100 w %}
+        {% endfilter %}
+
+        <h2 class="list-header">Fecha actual</h2>
+        <p class="member-name">{% now "Y-m-d H:i:s" %}</p>
+
+        <br>
+
+        <h2 class="list-header">Condicionales</h2>
+        {% for x in mymembers %}
+          {% if x.firstname == "Laura" %}
+            <p class="member-name">Hello Laura!</p>
+          {% else %}
+            <p class="member-name">{{ x.firstname }} no está, {{ x.firstname }} se fue</p>
+          {% endif %}
+        {% endfor %}
+
+        {% include "black_friday.html" %}
+
+    </div>
+</section>
+
+<footer>
+    © 2025 Mi sitio — Todos los derechos reservados
+</footer>
+
+</body>
+</html>

@@ -12,7 +12,11 @@
 
     <div class="profile-card">
       <div class="card-header">
-        <h1>👤 {{ mymember.firstname }} {{ mymember.lastname }}</h1>
+        {% if mymember.genero == "Mujer" %}
+        <h1>🙍‍♀️ {{ mymember.firstname }} {{ mymember.lastname }}</h1>
+        {% elif mymember.genero == "Hombre" %}
+        <h1>🙍‍♂️ {{ mymember.firstname }} {{ mymember.lastname }}</h1>
+        {% endif %}
         <p class="status">Miembro activo</p>
       </div>
 
